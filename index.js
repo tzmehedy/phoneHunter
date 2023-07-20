@@ -34,11 +34,25 @@ const displayPhones = (phones) => {
         
     });
 
+    loader(false);
+
 }
 
 const loadSearchText = () =>{
     const searchText = document.getElementById('searchText').value;
     loadPhones(searchText);
+    // start spinner
+    loader(true);
+}
+
+const loader = (isloading) =>{
+    const spinner = document.getElementById('spinner');
+    if(isloading){
+        spinner.classList.remove('d-none');
+    }
+    else{
+        spinner.classList.add('d-none');
+    }
 }
 
 // loadPhones();
